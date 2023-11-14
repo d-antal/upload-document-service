@@ -8,7 +8,7 @@ import com.bank.exercise.pdfupload.configuration.FallbackSupportConfig;
 import com.bank.exercise.pdfupload.model.Comment;
 import com.bank.exercise.pdfupload.model.Post;
 
-@FeignClient(value = "postAndComentApi", url = "https://jsonplaceholder.typicode.com/", fallbackFactory = PostAndCommentClientFallbackFactory.class, configuration = FallbackSupportConfig.class)
+@FeignClient(value = "postAndComentApi", url = "${postandcomment.api.url}", fallbackFactory = PostAndCommentClientFallbackFactory.class, configuration = FallbackSupportConfig.class)
 public interface PostAndCommentClient {
 
 	@PostMapping(value = "/posts", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
